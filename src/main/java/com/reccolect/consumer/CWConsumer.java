@@ -1,17 +1,19 @@
 package com.reccolect.consumer;
 
 import com.reccolect.converter.Converter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import javax.inject.Inject;
+
 
 @Component
 public class CWConsumer implements Consumer {
 
-    @Autowired
+    @Inject
     private Consumer windowConsumer;
-    @Autowired
+    @Inject
     private Consumer consoleConsumer;
-    @Autowired
+    @Inject
     private Converter funkyCaseConverter;
 
     @Override
