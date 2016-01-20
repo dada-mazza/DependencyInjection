@@ -2,7 +2,7 @@ package com.reccolect.converter;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("funky")
 public class FunkyCaseConverter implements Converter {
     @Override
     public String convert(String inputText) {

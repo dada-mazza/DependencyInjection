@@ -4,12 +4,13 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 
-@Component
+@Component("window")
 public class WindowConsumer implements Consumer {
+
     @Override
     public void showResult(String result) {
 
-        JFrame frame = new JFrame("WTF!!!");
+        JFrame frame = new JFrame("Controller!!!");
         JOptionPane.showMessageDialog(frame, result);
         System.exit(0);
     }

@@ -4,21 +4,24 @@ import com.reccolect.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
-
-@Component
+@Component("cw")
 public class CWConsumer implements Consumer {
 
     @Inject
+    @Named("window")
     private Consumer windowConsumer;
     @Inject
+    @Named("console")
     private Consumer consoleConsumer;
     @Inject
-    private Converter funkyCaseConverter;
+    @Named("funky")
+    private Converter converter;
 
     @Override
     public void showResult(String result) {
-        consoleConsumer.showResult(funkyCaseConverter.convert(result));
+        consoleConsumer.showResult(converter.convert(result));
         windowConsumer.showResult(result);
     }
 
@@ -30,7 +33,7 @@ public class CWConsumer implements Consumer {
         this.consoleConsumer = consoleConsumer;
     }
 
-    public void setFunkyCaseConverter(Converter funkyCaseConverter) {
-        this.funkyCaseConverter = funkyCaseConverter;
+    public void setConverter(Converter converter) {
+        this.converter = converter;
     }
 }

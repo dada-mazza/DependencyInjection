@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 
 @Component
 public class ConsoleTextProvider implements TextProvider {
+
     @Override
     public String getText() {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
